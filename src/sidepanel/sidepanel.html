@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Citation Search</title>
+    <link rel="stylesheet" href="sidepanel.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hero glass">
+        <div class="hero-top">
+          <div>
+            <p class="eyebrow">Citation Search</p>
+            <h1>Find citation data </h1>
+          </div>
+        </div>
+        <div class="toolbar">
+          <button id="theme-toggle" type="button" class="theme-toggle secondary" aria-label="Toggle theme">
+            <span class="theme-icon" aria-hidden="true">T</span>
+            <span class="theme-text">Dark mode</span>
+          </button>
+        </div>
+        <p class="lede">
+          
+        </p>
+      </header>
+
+      
+
+      <section class="card glass">
+        <label class="label" for="reference-query">Reference text, title, or DOI</label>
+        <textarea id="reference-query" rows="5" placeholder="Paste a reference entry, paper title, or DOI"></textarea>
+        <div class="actions">
+          <button id="search-button" type="button">Search citation</button>
+          <button id="paste-button" type="button" class="secondary">Paste from clipboard</button>
+          <button id="use-selection-button" type="button" class="secondary">Use last selected text</button>
+        </div>
+      </section>
+
+      <section class="card glass">
+        <div class="section-head">
+          <h2>Results</h2>
+          <span class="section-badge">Crossref + OpenAlex</span>
+        </div>
+        <div id="results" class="results">
+          <p class="empty">No results yet.</p>
+        </div>
+      </section>
+    </main>
+
+    <template id="result-template">
+      <article class="result glass-inner">
+        <div class="result-head">
+          <div class="result-title-block">
+            <h3 class="result-title"></h3>
+            <a class="result-link" target="_blank" rel="noreferrer">Open source</a>
+          </div>
+        </div>
+
+        <dl class="result-fields">
+          <div class="field-row">
+            <dt>Journal/Conference</dt>
+            <dd class="result-venue"></dd>
+          </div>
+          <div class="field-row">
+            <dt>DOI</dt>
+            <dd class="result-doi"></dd>
+          </div>
+        </dl>
+
+        <div class="abstract-block">
+          <button type="button" class="toggle-abstract secondary">Show abstract</button>
+          <p class="result-abstract hidden"></p>
+        </div>
+
+        <div class="copy-row">
+          <label class="label copy-label">Copy citation</label>
+          <div class="copy-controls">
+            <select class="citation-select" aria-label="Citation format">
+              <option value="bibtex" selected>BibTeX</option>
+              <option value="apa">APA</option>
+              <option value="mla">MLA</option>
+              <option value="chicago">Chicago</option>
+            </select>
+            <button type="button" class="copy-citation">Copy citation</button>
+          </div>
+        </div>
+
+        <pre class="citation-preview"></pre>
+      </article>
+    </template>
+
+    <script type="module" src="sidepanel.js"></script>
+  </body>
+  </html>

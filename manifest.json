@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Citation Search",
+  "version": "0.1.0",
+  "description": "Citation lookup and export companion for PDF tabs using the browser's default PDF viewer.",
+  "permissions": [
+    "activeTab",
+    "clipboardRead",
+    "contextMenus",
+    "sidePanel",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://api.crossref.org/*",
+    "https://api.openalex.org/*",
+    "https://*/*.pdf",
+    "http://*/*.pdf"
+  ],
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Open Citation Search"
+  },
+  "side_panel": {
+    "default_path": "src/sidepanel/sidepanel.html"
+  },
+  "options_page": "src/options/options.html"
+}
