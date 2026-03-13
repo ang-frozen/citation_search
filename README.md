@@ -46,11 +46,3 @@ This repository implements path `1` as the MVP because it is compatible with the
 3. Click "Load unpacked".
 4. Select this folder: `c:\Users\angko\OneDrive\Desktop\ext\reader`.
 
-## Next steps for a stronger version
-
-- Add a bundled `pdf.js` parser to extract the reference section automatically from the current PDF URL.
-- Rank search results using title similarity instead of plain API order.
-- Detect DOI, arXiv, PMID, and ISBN directly from reference strings before fallback search.
-- Add CSL-based formatting instead of simple built-in formatters.
-- Add caching in `chrome.storage.local`.
-- If exact click-on-reference behavior is non-negotiable, replace the native viewer with a custom `pdf.js` reader page.
