@@ -44,5 +44,5 @@ This repository implements path `1` as the MVP because it is compatible with the
 1. Open `chrome://extensions`.
 2. Enable Developer mode.
 3. Click "Load unpacked".
-4. Select this folder: `c:\Users\angko\OneDrive\Desktop\ext\reader`.
+4. Select this folder: `..\reader`.
 
